@@ -1,34 +1,6 @@
-class User {
+class Financeiro {
 
     id = 0;
-
-    async autenticacao(){
-
-        const email = document.getElementById("email").value;
-        const senha = document.getElementById("senha").value;
-
-        if(email == "" && senha == ""){
-            alert("Informe os campos corretamente")
-        } else {
-
-            // chamar a api
-            let usuario = {id:"01", nome:"Lucas"} // retorno da api
-            
-            if(typeof usuario.nome != "undefined"){
-                localStorage.setItem("user",JSON.stringify(usuario));
-                window.location.href = "/";
-            } else {
-                alert("Usuário não existe ou não tem permissão")
-            }
-
-        }
-
-    }
-
-    sair(){
-        localStorage.removeItem("user");
-        window.location.href = "/login.html";
-    }
 
     async listar(){
 
@@ -60,7 +32,7 @@ class User {
     async remover(id){
 
         // vou no banco remover via API
-        window.location.href = "/lista-user.html";
+        window.location.href = "/lista-financeiro.html";
 
     }
 
@@ -86,4 +58,4 @@ class User {
 
 }
 
-const user = new User();
+const financeiro = new Financeiro();
