@@ -16,6 +16,13 @@ class App {
         .then(response=> response.text())
         .then(text=> document.getElementById('sidebarMenu').innerHTML = text);
     }
+
+    verificarUsuarioLogado(){
+        let user = localStorage.getItem('user');
+        if(user === null){
+            window.location.href = "/login.html";
+        }
+    }
 }
 
 const app = new App();

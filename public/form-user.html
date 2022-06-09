@@ -62,7 +62,9 @@
       if(queryString != ""){
         const urlParams = new URLSearchParams(queryString);
         user.id = urlParams.get('id');
+        user.getById();
       }
+      app.verificarUsuarioLogado();
     </script>
     
 </body>
